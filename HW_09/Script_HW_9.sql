@@ -1,4 +1,10 @@
-﻿create table employees (
+﻿# Создать таблицу employees
+# - id. serial,  primary key,
+# - employee_name. Varchar(50), not null
+# Наполнить таблицу employee 70 строками.
+
+
+create table employees (
 	id serial primary key,
 	employee_name varchar (50) not null
 );
@@ -9,6 +15,12 @@ values (default, 'Элла');
 select * from employees;
 
 	==========================================
+
+# Создать таблицу salary
+# - id. Serial  primary key,
+# - monthly_salary. Int, not null
+# Наполнить таблицу salary 15 строками:
+
 	
 create table salary (
 	id serial primary key,
@@ -23,6 +35,14 @@ select * from salary;
 delete from salary where id = 16;
 
 	==========================================
+
+# Создать таблицу employee_salary
+# - id. Serial  primary key,
+# - employee_id. Int, not null, unique
+# - salary_id. Int, not null
+# Наполнить таблицу salary 40 строками:
+# - в 10 строк из 40 вставить несуществующие employee_id
+
 
 create table employee_salary (
 	id serial primary key,
@@ -42,6 +62,13 @@ delete from employee_salary where id = 41;
 
 	==========================================
 
+# Создать таблицу roles
+# - id. Serial  primary key,
+# - role_name. int, not null, unique
+# Поменять тип столба role_name с int на varchar(30)
+# Наполнить таблицу salary 20 строками:
+
+
 create table roles (
 	id serial primary key,
 	role_name integer not null unique	
@@ -56,6 +83,13 @@ values (default, 'Senior Automation QA engineer');
 select * from roles;
 
 	==========================================
+
+# Создать таблицу employee_salary
+# - id. Serial  primary key,
+# - employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
+# - role_id. Int, not null (внешний ключ для таблицы roles, поле id)
+# Наполнить таблицу salary 40 строками:
+
 	
 create table roles_employee (
 	id serial primary key,
